@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="../../Aframe/aframe.min.js"></script>
+</head>
+<body>	 
+	 <a-scene>
+		<a-sky color="grey"></a-sky>
+		<a-plane width="7" height="7" rotation="-55 0 0" position="-2 -2 -5" color="purple"
+		src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/illustration/758px-Canestra_di_frutta_(Caravaggio).jpg"></a-plane>
+		<a-plane width="9" height="2" position="3 1 -9"></a-plane>
+		<a-text value="Командирчик" width="10" position="-0.5 1 -6"
+			font="../../Files/ANTQUAI.TTF-msdf.json"
+			color="black"
+			negate="false">
+		</a-text>
+		<a-torus position="-2 1 -5" color="green" radius="1.2" 
+		animation="property: components.material.material.color; type: color; from: green; to: red; loop: true; dur: 10000"></a-torus>
+		<a-cylinder color="yellow" height="2" radius="0.05" position="-2 -1 -5"></a-cylinder>
+		<a-cylinder color="blue" height="2" radius="0.05" position="-3 -1 -5"></a-cylinder>
+		<a-torus-knot color="orange" radius="1.2" position="-3 1 -5"
+		animation="property: rotation; to: 0 0 360; loop: true; dur: 10000"></a-torus-knot>
+	 </a-scene>
+</body>
+</html>
