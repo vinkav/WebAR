@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+	<script src="Planet.js"></script>
+</head>
+<body style="margin: 0px; overflow: hidden">
+	<a-scene>	
+		<a-sky material="src: Textures\8k_stars.jpg"></a-sky>
+		<a-camera position="0 0 200" cursor-visible="true" cursorscale="2" cursor-color="#0095DD" cursor-opacity="0.5"></a-camera>
+		<a-entity geometry="primitive: sphere; radius: 2.0510" 
+					material="src: Textures\8k_sun.jpg" 
+					planet="dist: 0; mass: 1.989e30; name: Sun">
+		</a-entity>
+		<a-entity geometry="primitive: sphere; radius: 0.24397" 
+					material="src: Textures\8k_mercury.jpg" 
+					planet="dist: 57.910e9; mass: 3.285e23; T: 88; name: Mercury">
+		</a-entity>
+		<a-entity geometry="primitive: sphere; radius: 0.60518" 
+					material="src: Textures\8k_venus_surface.jpg" 
+					planet="dist: 108.2e9; mass: 4.876e24; T: 224.7; name: Venus">
+		</a-entity>
+		<a-entity geometry="primitive: sphere; radius: 0.6371" 
+					material="src: Textures\8k_earth_daymap.jpg" 
+					planet="dist: 149.6e9; mass: 6e24; T: 365; name: Earth">
+		</a-entity>
+		<a-entity geometry="primitive: sphere; radius: 0.33" 
+					material="src: Textures\8k_mars.jpg" 
+					planet="dist: 227.9e9; mass: 6.4e23; T: 780; name: Mars">
+		</a-entity>
+		<a-entity geometry="primitive: sphere; radius: 6.9911" 
+					material="src: Textures\8k_jupiter.jpg" 
+					planet="dist: 778.5e9; mass: 1898.6e24; T: 4333; name: Jupiter">
+		</a-entity>
+		<a-entity geometry="primitive: sphere; radius: 5.8232" 
+					material="src: Textures\8k_saturn.jpg" 
+					planet="dist: 1426.6e9; mass: 568.46e24; T: 10759; name: Saturn">
+		</a-entity>
+		<a-entity geometry="primitive: sphere; radius: 2.5362" 
+					material="src: Textures\2k_uranus.jpg" 
+					planet="dist: 2876.7e9; mass: 86.813e24; T: 30685; name: Uranus">
+		</a-entity>
+		<a-entity geometry="primitive: sphere; radius: 2.4622" 
+					material="src: Textures\2k_neptune.jpg" 
+					planet="dist: 4503.4e9; mass: 102.43e24; T: 60190; name: Neptune">
+		</a-entity>
+		<a-entity main></a-entity>
+	</a-scene>
+</body>
+</html>
