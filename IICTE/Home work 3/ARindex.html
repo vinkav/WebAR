@@ -6,7 +6,7 @@
 	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
 <body>	 
-	 <a-scene  embedded arjs = 'trackingMethod: best;'>
+	 <a-scene  embedded arjs = 'trackingMethod: best; sourceWidth: 1920; sourceHeight: 1080'>
 		<a-anchor hit-testing-enabled='true'>
 			<a-sky color="grey"></a-sky>
 			<a-plane width="3" height="5" rotation="-55 0 0" position="0 -1 0" color="purple"
@@ -25,6 +25,7 @@
 			<a-torus-knot color="orange" radius="0.5" position="1 0.5 0"
 			animation="property: rotation; to: 0 0 360; loop: true; dur: 10000"></a-torus-knot>
 		</a-anchor>
+		<a-camera-static/>
 	 </a-scene>
 </body>
 </html>
