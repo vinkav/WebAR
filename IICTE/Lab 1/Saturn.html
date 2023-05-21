@@ -4,25 +4,19 @@
   </head>
   <body>
     <a-scene>
-	<a-sky color="black"></a-sky>
+	<a-sky material="src: Textures\8k_stars.jpg"></a-sky>
 	<a-entity light="color: #AFA; intensity: 1.0" position="-500 0 0"></a-entity> <!-- 1 item == 1000 km -->
 	<a-entity animation="property: rotation; to: 0 360 27; loop: true; dur: 10000" rotation="0 0 27">
 		<a-sphere radius="60" material="src: Textures\8k_saturn.jpg" 
 		segments-height="32"></a-sphere> 
-		<!--- https://caps.gsfc.nasa.gov/simpson/kingswood/rings/ -->
-		<!--
-			D ring radius-inner = 2.472 Saturn radii 
-			D ring radius-outer = 2.472 Saturn radii +  0.126 Saturn radii
-			C ring radius-inner = 3.054 Saturn radii 
-			C ring radius-outer = 3.054 Saturn radii +   0.288  Saturn radii
-		-->
 
+		<a-ring color="white" radius-inner="148.32" radius-outer="155.88" material="side: double; src: Textures\spokes.jpg""
+			rotation="90 0 0"></a-ring> <!-- D -->
+			
 		<a-ring radius-inner="183.24" radius-outer="200.52"
-		material="side: double; src: Textures\8k_saturn_ring_alpha.png" 
+		material="side: double; src: Textures\spokes.jpg" 
 		rotation="90 0 0"></a-ring> <!-- C -->
 		
-		<a-ring color="white" radius-inner="14.832" radius-outer="15.588" material="side: double" src="../assets/earth.jpg"
-			rotation="90 0 0"></a-ring> <!-- D -->
 	</a-entity>
 
 	<a-camera position="0 0 300" ></a-camera>
