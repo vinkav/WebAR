@@ -36,8 +36,8 @@ AFRAME.registerComponent('run', {
 		let geometry=new THREE.CylinderGeometry( 0.05, 0.05, 1, 12);
 		geometry.applyMatrix4( new THREE.Matrix4().makeTranslation( 0, 0.5, 0 ) );
 		geometry.applyMatrix4( new THREE.Matrix4().makeRotationX( THREE.MathUtils.degToRad( 90 ) ) );
+		
 		this.cylinderAB = new THREE.Mesh( geometry, material );
-
 		this.lineAB = document.querySelector('#lineAB').object3D;
 		this.lineAB.add( this.cylinderAB );
 		this.cylinderAB.visible = false;
@@ -49,7 +49,7 @@ AFRAME.registerComponent('run', {
 
 		this.cylinderCD = new THREE.Mesh( geometry, material );
 		this.lineCD = document.querySelector('#lineCD').object3D;
-		this.lineCD.add( this.cylinderCA );
+		this.lineCD.add( this.cylinderCD );
 		this.cylinderCD.visible = false;
 		
 		this.cylinderDF = new THREE.Mesh( geometry, material );
@@ -75,9 +75,9 @@ AFRAME.registerComponent('run', {
 			this.cylinderAB.visible = true;
 		}
 		if ( markerVisible["B"] && markerVisible["C"] ) {
-			this.B.object3D.getWorldPosition(this.pA);
-			this.C.object3D.getWorldPosition(this.pB);
-			let distance = this.pA.distanceTo( this.pB );
+			this.B.object3D.getWorldPosition(this.pB);
+			this.C.object3D.getWorldPosition(this.pC);
+			let distance = this.pB.distanceTo( this.pC );
 			Pr += distance;
 			this.lineBC.lookAt( this.pC );
 			this.cylinderBC.scale.set(1,1,distance);
@@ -94,7 +94,7 @@ AFRAME.registerComponent('run', {
 		}
 		if ( markerVisible["D"] && markerVisible["F"] ) {
 			this.D.object3D.getWorldPosition(this.pD);
-			this.D.object3D.getWorldPosition(this.pF);
+			this.F.object3D.getWorldPosition(this.pF);
 			let distance = this.pD.distanceTo( this.pF );
 			Pr += distance;
 			this.lineDF.lookAt( this.pF );
@@ -106,7 +106,7 @@ AFRAME.registerComponent('run', {
 			this.A.object3D.getWorldPosition(this.pA);
 			let distance = this.pF.distanceTo( this.pA );
 			Pr += distance;
-			this.lineFA.lookAt( this.pF );
+			this.lineFA.lookAt( this.pA );
 			this.cylinderFA.scale.set(1,1,distance);
 			this.cylinderFA.visible = true;
 		}
@@ -116,15 +116,15 @@ AFRAME.registerComponent('run', {
 			this.P.setAttribute('value', "");
 			
 		if ( !markerVisible["A"] )
-			this.cylinderAB.visible = this.cylinderCA.visible = false;
+			this.cylinderAB.visible = this.cylinderFA.visible = false;
 		if ( !markerVisible["B"] )
-			this.cylinderBC.visible = this.cylinderBC.visible = false;
+			this.cylinderBC.visible = this.cylinderAB.visible = false;
 		if ( !markerVisible["C"] )
-			this.cylinderCD.visible = this.cylinderCD.visible = false;
+			this.cylinderCD.visible = this.cylinderBC.visible = false;
 		if ( !markerVisible["D"] )
-			this.cylinderDF.visible = this.cylinderDF.visible = false;
+			this.cylinderDF.visible = this.cylinderCD.visible = false;
 		if ( !markerVisible["F"] )
-			this.cylinderFA.visible = this.cylinderFA.visible = false;
+			this.cylinderFA.visible = this.cylinderDF.visible = false;
 	}
 
 });
