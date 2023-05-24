@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+	<a-sky material="src: Textures\8k_stars.jpg"></a-sky>
+	<a-entity light="color: #AFA; intensity: 1.0" position="-500 0 0"></a-entity> <!-- 1 item == 1000 km -->
+	<a-entity animation="property: rotation; to: 0 360 27; loop: true; dur: 10000" rotation="0 0 27">
+		<a-sphere radius="60" material="src: Textures\8k_saturn.jpg" 
+		segments-height="32"></a-sphere> 
+
+		<a-ring color="white" radius-inner="148.32" radius-outer="155.88" material="side: double; src: Textures\spokes.jpg""
+			rotation="90 0 0"></a-ring> <!-- D -->
+			
+		<a-ring radius-inner="183.24" radius-outer="200.52"
+		material="side: double; src: Textures\spokes.jpg" 
+		rotation="90 0 0"></a-ring> <!-- C -->
+		
+	</a-entity>
+
+	<a-camera position="0 0 300" ></a-camera>
+    </a-scene>
+  </body>
+</html>

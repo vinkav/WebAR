@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0px; overflow: hidden">
+	
+
+	<a-scene  embedded arjs = "debugUIEnabled: false;">	
+		<a-marker preset="hiro" id='marker-hiro'>
+			<a-entity geometry="primitive: cylinder" material="color: red"
+			animation__mouseenter="property: rotation; from:0 0 0; to: 0 180
+			180; startEvents: mouseenter; dur: 1000"; animation__mouseleave=
+			"property: components.material.material.color; type: color; from:
+			blue; to: red; startEvents: mouseleave; dur: 1000";> </a-entity>
+		</a-marker>
+		<a-marker preset="kanji" id='marker-kanji'>
+			<a-box position='0 0.5 0' material='color: blue;'></a-box>
+		</a-marker>
+		<a-marker type='pattern' url='Marker/pattern.patt'>
+			<a-entity geometry="primitive: cylinder" material="color: yellow"
+			animation__mouseenter="property: rotation; from:0 0 0; to: 0 0
+			360; startEvents: mouseenter; dur: 1000"; animation__mouseleave=
+			"property: components.material.material.color; type: color; from:
+			blue; to: red; startEvents: mouseleave; dur: 1000";> </a-entity>
+		</a-marker>
+		<a-entity camera><a-cursor></a-cursor></a-entity>
+	</a-scene>
+</body>
+</html>

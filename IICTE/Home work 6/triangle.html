@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<script src="../../js/aframe/aframe.min.js"></script>
+    		<script src="../../js/arjs/aframe-ar.js"></script>
+		<script src="triangle.js"></script>
+	</head>
+	<body>
+		<a-scene embedded arjs>
+			<a-marker type="pattern" url="Marker/patternA.patt" id="A" registerevents>
+				<a-sphere radius="0.10" color="red"></a-sphere>
+				<a-entity id="lineAB"></a-entity>
+			</a-marker>
+			<a-marker type="pattern" url="Marker/patternB.patt" id="B" registerevents>
+				<a-sphere radius="0.10" color="red"></a-sphere>
+				<a-entity id="lineBC"></a-entity>
+			</a-marker>
+			<a-marker type="pattern" url="Marker/patternC.patt" id="C" registerevents>
+				<a-sphere radius="0.10" color="red"></a-sphere>
+				<a-entity id="lineCD"></a-entity>
+			</a-marker>
+			<a-marker type="pattern" url="Marker/patternD.patt" id="D" registerevents>
+				<a-sphere radius="0.10" color="red"></a-sphere>
+				<a-entity id="lineDF"></a-entity>
+			</a-marker>
+			<a-marker type="pattern" url="Marker/patternF.patt" id="F" registerevents>
+				<a-sphere radius="0.10" color="red"></a-sphere>
+				<a-entity id="lineFA"></a-entity>
+				<a-text id="P" position="0 -1 0" rotation="-90 0 0" value=""></a-text>
+			</a-marker>
+			<a-entity camera></a-entity>
+			<a-entity run></a-entity>
+		</a-scene>
+	</body>
+</html>
+
