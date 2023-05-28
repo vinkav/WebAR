@@ -16,10 +16,23 @@
 		    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 
 
-			<a-nft type="nft" url="../../assets/tropics_2" emitevents registerevents>
-				<a-sphere color="green" radius=50></a-sphere>
+			<a-nft type="nft" url="/../assets/Hohenschwangau" emitevents registerevents>
+				<a-entity rotation="90 0 0">
+					<a-entity light="color: #AFA; intensity: 1.0" position="-500 0 0"></a-entity> <!-- 1 item == 1000 km -->
+					<a-entity animation="property: rotation; to: 0 360 27; loop: true; easing: linear; easing: linear; dur: 5000" rotation="0 0 27">
+						<a-sphere radius="60" material="src: Textures\8k_saturn.jpg" 
+						segments-height="32"></a-sphere> 
+
+						<a-ring color="white" radius-inner="148.32" radius-outer="155.88" material="side: double; src: Textures\spokes.jpg""
+							rotation="90 0 0"></a-ring> <!-- D -->
+							
+						<a-ring radius-inner="183.24" radius-outer="200.52"
+						material="side: double; src: Textures\spokes.jpg" 
+						rotation="90 0 0"></a-ring> <!-- C -->
+					</a-entity>	
+				</a-entity>
 			</a-nft>
-		<a-entity camera></a-entity>
+		<a-entity camera position="0 0 600"></a-entity>
 		</a-scene>
 	</body>
 <html>
