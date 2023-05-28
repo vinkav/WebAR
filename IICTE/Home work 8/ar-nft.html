@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<script src="../../js/aframe/aframe.min.js"></script>
+		<script src="../../js/arjs/aframe-ar-nft.js"></script>
+		<link rel="stylesheet" href="ar-nft.css">
+		<script src="registerevnts.js"></script>
+	</head>
+	<body>
+		<div class="arjs-loader">
+			<div>Йде завантаження, зачекайте...</div>
+		</div>
+		<a-scene
+		    vr-mode-ui="enabled: false;"
+		    renderer="logarithmicDepthBuffer: true;"
+		    embedded
+		    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+
+			<a-nft type="nft" url="/../assets/Hohenschwangau" emitevents registerevents>
+				<a-gltf-model src="/../assets/karaoke_piranha_plant.glb" scale="1 1 1" rotation="-90 0 0" position="50 150 0"></a-gltf-model>
+				<!--<a-sphere color="green" radius=50></a-sphere>-->
+			</a-nft>
+		<a-entity camera></a-entity>
+		</a-scene>
+	</body>
+<html>
